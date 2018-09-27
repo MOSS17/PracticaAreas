@@ -15,70 +15,26 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Áreas de Figuras geométricas" FontSize="25" Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" TextWrapping="NoWrap" Grid.ColumnSpan="4" Margin="10,0,0,0"/>
+
+        <ComboBox Name="cbTipoFigura" Grid.Column="0" Grid.Row="3" Margin="10,0,0,0" SelectionChanged="cbTipoFigura_SelectionChanged">
+            <ComboBoxItem>Rectángulo</ComboBoxItem>
+            <ComboBoxItem>Triángulo</ComboBoxItem>
+            <ComboBoxItem>Círculo</ComboBoxItem>
+            <ComboBoxItem>Trapecio</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Name="panelConfiguracion" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4"></StackPanel>
+        <TextBlock Text="Area" FontSize="18" Grid.Column="3" Grid.Row="3" Margin="10,0,0,0"/>
         
-        <TextBlock Text="Rectángulo" FontSize="20" Grid.Column="0" Grid.Row="1" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBlock Text="base:" FontSize="18" Grid.Column="0" Grid.Row="2" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="altura:" FontSize="18" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="área:" FontSize="18" Grid.Column="3" Grid.Row="2" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBox Name="ValorBaseRectangulo" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="3" Height="20" Margin="10,0,0,0" Width="100" />
-        <TextBox Name="ValorAlturaRectangulo" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" Height="20" Margin="10,0,0,0" Width="100"/>
-        <Button Name="CalcularRectangulo" Click="CalcularRectangulo_Click" Content="Calcular" Grid.Column="2" Grid.Row="3" Height="20" Width="80" Margin="10,0,0,0"/>
-        <TextBlock Name="AreaRectangulo" FontSize="18" Text="0.0" Grid.Column="3" Grid.Row="3" Margin="10,0,0,0"/>
-
-        <TextBlock Text="Triángulo:" FontSize="20" Grid.Column="0" Grid.Row="4" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBlock Text="base:" FontSize="18" Grid.Column="0" Grid.Row="5" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="altura:" FontSize="18" Grid.Column="1" Grid.Row="5" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="área:" FontSize="18" Grid.Column="3" Grid.Row="5" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBox Name="ValorBaseTriangulo" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="6" Height="20" Margin="10,0,0,0" Width="100" />
-        <TextBox Name="ValorAlturaTriangulo" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="6" Height="20" Margin="10,0,0,0" Width="100" />
-        <Button Name="CalcularTriangulo" Click="CalcularTriangulo_Click"  Content="Calcular" Grid.Column="2" Grid.Row="6" Height="20" Width="80" Margin="10,0,0,0"/>
-        <TextBlock Name="AreaTriangulo" FontSize="18" Text="0.0" Grid.Column="3" Grid.Row="6" Margin="10,0,0,0"/>
-
-        <TextBlock Text="Círculo:" FontSize="20" Grid.Column="0" Grid.Row="7" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBlock Text="radio:" FontSize="18" Grid.Column="0" Grid.Row="8" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="área:" FontSize="18" Grid.Column="3" Grid.Row="8" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBox Name="ValorRadio" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="9" Height="20" Margin="10,0,0,0" Width="100" />
-        <Button Name="CalcularCirculo" Click="CalcularCirculo_Click" Content="Calcular" Grid.Column="2" Grid.Row="9" Height="20" Width="80" Margin="10,0,0,0"/>
-        <TextBlock Name="AreaCirculo" FontSize="18" Text="0.0" Grid.Column="3" Grid.Row="9" Margin="10,0,0,0"/>
-
-        <TextBlock Text="Trapecio:" FontSize="20" Grid.Column="0" Grid.Row="10" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBlock Text="base mayor:" FontSize="18" Grid.Column="0" Grid.Row="11" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="base menor:" FontSize="18" Grid.Column="1" Grid.Row="11" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-        <TextBlock Text="área:" FontSize="18" Grid.Column="3" Grid.Row="11" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBox Name="ValorBaseMayor" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="12" Height="20" Margin="10,0,0,0" Width="100" />
-        <TextBox Name="ValorBaseMenor" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="12" Height="20" Margin="10,0,0,0" Width="100" />
-        <Button Name="CalcularTrapecio" Click="CalcularTrapecio_Click" Content="Calcular" Grid.Column="2" Grid.Row="12" Height="20" Width="80" Margin="10,0,0,0"/>
-        <TextBlock Name="AreaTrapecio" FontSize="18" Text="0.0" Grid.Column="3" Grid.Row="12" Margin="10,0,0,0"/>
-
-        <TextBlock Text="altura:" FontSize="18" Grid.Column="0" Grid.Row="13" TextWrapping="NoWrap" Margin="10,0,0,0"/>
-
-        <TextBox Name="ValorAlturaTrapecio" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="14" Height="20" Margin="10,0,0,0" Width="100" />
+        <Button Click="Button_Click" Content="Calcular" Grid.Column="2" Grid.Row="4" Height="20" Width="80" Margin="10,0,0,0"/>
+        <TextBlock Name="lblResultadoArea" FontSize="18" Text="0.0" Grid.Column="4" Grid.Row="4" Margin="10,0,0,0"/>
 
     </Grid>
 </Window>

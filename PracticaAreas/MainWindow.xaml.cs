@@ -22,7 +22,7 @@ namespace PracticaAreas
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();/*
             ValorBaseRectangulo.Text = "0";
             ValorAlturaRectangulo.Text = "0";
             ValorBaseTriangulo.Text = "0";
@@ -30,9 +30,9 @@ namespace PracticaAreas
             ValorRadio.Text = "0";
             ValorBaseMayor.Text = "0";
             ValorBaseMenor.Text = "0";
-            ValorAlturaTrapecio.Text = "0";
+            ValorAlturaTrapecio.Text = "0";*/
         }
-
+        /*
         private void CalcularRectangulo_Click(object sender, RoutedEventArgs e)
         {
             float ValorBase = float.Parse(ValorBaseRectangulo.Text);
@@ -75,6 +75,50 @@ namespace PracticaAreas
             float Area = Altura * ((BaseMayor + BaseMenor) / 2);
 
             AreaTrapecio.Text = Area.ToString();
+        }*/
+
+        private void cbTipoFigura_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            panelConfiguracion.Children.Clear();
+            switch (cbTipoFigura.SelectedIndex)
+            {
+                case 0: //Rectángulo
+                    panelConfiguracion.Children.Add(
+                        new ControlAreaRectangulo());
+                    break;
+                case 1: //Triángulo
+                    panelConfiguracion.Children.Add(
+                        new ControlAreaTriangulo());
+                    break;
+                case 2: //Círculo
+                    panelConfiguracion.Children.Add(
+                        new ControlAreaCirculo());
+                    break;
+                case 3: //Trapecio
+                    panelConfiguracion.Children.Add(
+                        new ControlAreaTrapecio());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            double area = 0.0;
+            switch (cbTipoFigura.SelectedIndex)
+            {
+                case 0: //Rectángulo
+                    break;
+                case 1: //Triángulo
+                    break;
+                case 2: //Círculo
+                    break;
+                case 3: //Trapecio
+                    break;
+            }
+            lblResultadoArea.Text =
+                area.ToString();
         }
     }
 }

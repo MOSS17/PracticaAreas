@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="PracticaAreas.ControlAreaRectangulo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PracticaAreas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="AliceBlue">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="base:" FontSize="18" Grid.Column="0" Grid.Row="0" TextWrapping="NoWrap" Margin="10,0,0,0"/>
+        <TextBlock Text="altura:" FontSize="18" Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" Margin="10,0,0,0"/>
+    
+        <TextBox Name="ValorBaseRectangulo" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Height="20" Margin="10,0,0,0" Width="100"/>
+        <TextBox Name="ValorAlturaRectangulo" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Height="20" Margin="10,0,0,0" Width="100"/>
+
+    </Grid>
+</UserControl>
