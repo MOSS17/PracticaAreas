@@ -36,11 +36,8 @@ namespace PracticaAreas
         private void CalcularRectangulo_Click(object sender, RoutedEventArgs e)
         {
             float ValorBase = float.Parse(ValorBaseRectangulo.Text);
-
             float ValorAltura = float.Parse(ValorAlturaRectangulo.Text);
-
             float Area = ValorBase * ValorAltura;
-
             AreaRectangulo.Text = Area.ToString();
         }
 
@@ -109,10 +106,22 @@ namespace PracticaAreas
             switch (cbTipoFigura.SelectedIndex)
             {
                 case 0: //Rectángulo
+                    var controlAreaRectangulo = (ControlAreaRectangulo)panelConfiguracion.Children[0];
+
+                    float ValorBase = float.Parse(controlAreaRectangulo.ValorBaseRectangulo.Text);
+                    
+                    float ValorAltura = float.Parse(controlAreaRectangulo.ValorAlturaRectangulo.Text);
+
+                    area = ValorBase * ValorAltura;
+
                     break;
                 case 1: //Triángulo
                     break;
                 case 2: //Círculo
+                    var controlAreaCirculo = (ControlAreaCirculo)panelConfiguracion.Children[0];
+                    float radio = float.Parse(controlAreaCirculo.ValorRadio.Text);
+                    area = 3.14159f * radio * radio;
+
                     break;
                 case 3: //Trapecio
                     break;
