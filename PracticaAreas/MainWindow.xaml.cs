@@ -116,14 +116,35 @@ namespace PracticaAreas
 
                     break;
                 case 1: //Triángulo
+                    var controlAreaTriangulo = (ControlAreaTriangulo)panelConfiguracion.Children[0];
+
+                    ValorBase = float.Parse(controlAreaTriangulo.ValorBaseTriangulo.Text);
+
+                    ValorAltura = float.Parse(controlAreaTriangulo.ValorAlturaTriangulo.Text);
+
+                    area = (ValorBase * ValorAltura) / 2;
+
                     break;
                 case 2: //Círculo
                     var controlAreaCirculo = (ControlAreaCirculo)panelConfiguracion.Children[0];
+
                     float radio = float.Parse(controlAreaCirculo.ValorRadio.Text);
+
                     area = 3.14159f * radio * radio;
 
                     break;
                 case 3: //Trapecio
+                    var controlAreaTrapecio = (ControlAreaTrapecio)panelConfiguracion.Children[0];
+                    
+                    float BaseMenor = float.Parse(controlAreaTrapecio.ValorBaseMenor.Text);
+
+                    float BaseMayor = float.Parse(controlAreaTrapecio.ValorBaseMayor.Text);
+
+                    float Altura = float.Parse(controlAreaTrapecio.ValorAlturaTrapecio.Text);
+
+                    area = Altura * ((BaseMayor + BaseMenor) / 2);
+
+
                     break;
             }
             lblResultadoArea.Text =
